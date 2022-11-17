@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hotel',
+    # add the module to the installed apps 
+    'hotel.booking_functions'
 ]
 
 MIDDLEWARE = [
