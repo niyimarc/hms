@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="mt-6">Booking Form</h2>
+            <form action="" method="POST">
+                
+                {{form.as_p}}
+                {% csrf_token %}
+            <button type="submit">Book Room</button>
+            
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>
+
+
