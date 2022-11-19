@@ -3,14 +3,15 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-ROOM_CATEGORIES = (
+
+
+class Room(models.Model):
+    ROOM_CATEGORIES = (
     ('Basic', 'Basic'),
     ('Diamond', 'Diamond'),
     ('Gold', 'Gold'),
     ('Silver', 'Silver')
 )
-
-class Room(models.Model):
     number = models.IntegerField()
     category = models.CharField(max_length=7, choices=ROOM_CATEGORIES)
     beds = models.IntegerField()

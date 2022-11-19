@@ -9,7 +9,7 @@ Room List
     <div class="container dark-grey-text mt-5">
 
       <!--Grid row-->
-      {% for room in room_list %}
+      {% for room_category, room_url in room_list %}
       
       
       <div class="row wow fadeIn">
@@ -46,16 +46,14 @@ Room List
               <span>$100</span>
             </p>
 
-            <p class="lead font-weight-bold">{{room.category}}</p>
+            <p class="lead font-weight-bold">{{room_category}}</p>
 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit libero eos atque quia ipsa
               sint voluptatibus!
               Beatae sit assumenda asperiores iure at maxime atque repellendus maiores quia sapiente.</p>
 
            
-              <button class="btn btn-primary btn-md my-0 p" type="submit">Book Room
-                {% comment %} <i class="fas fa-shopping-cart ml-1"></i> {% endcomment %}
-              </button>
+              <a class="btn btn-primary btn-md my-0 p" href="{{room_url}}" >Book Room</a>
 
           </div>
           <!--Content-->
