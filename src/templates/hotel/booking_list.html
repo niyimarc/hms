@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+Booking List
+{% endblock title %}
+{% block content %}
+
+<main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+            <div class="col-md-8 mb-4">
+
+                {% for booking in booking_list %}
+                <h2>{{booking}}</h2>
+                {% endfor %}
+
+            </div>
+
+            
+        </div>  
+    </div>
+</main>
+{% endblock content %}

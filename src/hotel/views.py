@@ -28,6 +28,18 @@ def RoomListView(request):
     }  
     return render(request, 'hotel/room_list.html', contex)
 
+class BookingList(ListView):
+    model = Booking
+    def get_queryset(self, *args, **kwargs):
+        # show all booking list to staff 
+        if self.request.user.is_staff:
+            booking_list = Booking.objects.all()
+            return booking_list
+        else:
+            # show all booked room by user 
+            booking_list = Booking.objects.filter(user= self.request.user)
+            return booking_list
+
 class RoomDetailView(DetailView):
     def get(self, request, *args, **kwargs):
         category = self.kwargs.get('category', None)
@@ -73,10 +85,6 @@ class RoomDetailView(DetailView):
             return HttpResponse(booking)
         else:
             return HttpResponse('This category of rooms are booked.')
-
-class BookingList(ListView):
-    model = Booking
-    template_name= ''
 
 class BookingForm(FormView):
     form_class = AvailabilityForm
